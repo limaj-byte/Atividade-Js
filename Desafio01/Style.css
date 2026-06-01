@@ -1,0 +1,19 @@
+body{
+    Background-color: #f0f0f0;
+    font-family: Arial;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+.container{
+    background-color:#092f13;
+    color:white;
+    padding: 20px;
+    width: 500px;
+    border-radius:52px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.list{
+    list-style-type: none;
+    padding: 30px;
+}
