@@ -29,17 +29,38 @@ botao.addEventListener("click", function(){
 
     let presente = itemLista.querySelector(".presente");
     let faltou = itemLista.querySelector(".faltou");
+
     presente.addEventListener("click", function() {
         itemLista.style.backgroundColor = "Green";
         itemLista.style.color = "White";
+        itemLista.style.borderRadius="7px"
         contadorPresentes=contadorPresentes+1;
         totalPresentes.innerHTML = `Total de Alunos Presentes: ${contadorPresentes}`;
+        presente.disabled=true;
+        ausente.addEventListener("click", function() {
+            itemLista.style.backgroundColor = "Red";
+            itemLista.style.color = "White";
+            itemLista.style.borderRadius="7px"
+            contadorPresentes--;
+            totalPresentes.innerHTML = `Total de Alunos Presentes: ${contadorPresentes}`;
+            faltou.disabled=true;
+        });
     });
 
     faltou.addEventListener("click", function() {
         itemLista.style.backgroundColor = "Red";
         itemLista.style.color = "White";
+        itemLista.style.borderRadius="7px"
         contadorAusentes=contadorAusentes+1;
         totalAusentes.innerHTML = `Total de Alunos Ausentes: ${contadorAusentes}`;
+        faltou.disabled = true;
+        presente.addEventListener("click", function() {
+            itemLista.style.backgroundColor = "Green";
+            itemLista.style.color = "White";
+            itemLista.style.borderRadius="7px"
+            contadorAusentes--;
+            totalAusentes.innerHTML = `Total de Alunos Ausentes: ${contadorAusentes}`;
+            presente.disabled=true;
+        });
     });
 });
